@@ -1,5 +1,5 @@
-<p>add-categoria works!</p>
-<form>
-    <input type="text">
-    <button type="submit">enviar</button>
+<p #bio>Categoria: {{nombreCategoria}}</p>
+<form #categoriaForm (ngSubmit)="addCategoria($event)">
+    <input type="text" id="nombreCategoria" name="nombreCategoria" [(ngModel)]="nombreCategoria" #nombreInputCategoria="ngModel" required>
+    <button type="submit" *ngIf="nombreInputCategoria">enviar</button>
 </form>
